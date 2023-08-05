@@ -1,12 +1,4 @@
-FROM node:14.17.6
-ENV NODE_ENV=production
+FROM nginx:latest
+COPY ./html/index.html /usr/share/nginx/html/index.html
 
-WORKDIR /app
-
-COPY ["package.json", "package-lock.json*", "./"]
-
-RUN npm install --production
-
-COPY . .
-
-CMD ["node", "server.js"]
+CMD [ "npm install" ]
