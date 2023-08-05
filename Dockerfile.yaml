@@ -1,4 +1,5 @@
-FROM nginx:latest
-COPY ./html/index.html /usr/share/nginx/html/index.html
-
-CMD [ "npm install" ]
+FROM ubuntu
+WORKDIR C:\Users\HP\local\githubDocker\wedding-Invitation-mohd.nadeem
+COPY index.html .
+EXPOSE 8080
+CMD ["html","index.html"]
